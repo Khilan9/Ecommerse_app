@@ -1,15 +1,14 @@
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import LinkContainer from 'react-router-bootstrap/LinkContainer';
-import { Link } from 'react-router-dom';
-import Badge from 'react-bootstrap/Badge';
-import Nav from 'react-bootstrap/Nav';
-import { useContext } from 'react';
-import { Store } from './Store';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import LinkContainer from "react-router-bootstrap/LinkContainer";
+import { Link } from "react-router-dom";
+import Badge from "react-bootstrap/Badge";
+import Nav from "react-bootstrap/Nav";
+import { useContext } from "react";
+import { Store } from "./Store";
 
 function App() {
   const { state } = useContext(Store);
