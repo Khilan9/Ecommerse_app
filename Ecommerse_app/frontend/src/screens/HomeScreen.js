@@ -4,6 +4,7 @@ import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -24,7 +25,6 @@ function HomeScreen() {
     error: '',
     products: []
   })
-  // const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
@@ -38,7 +38,11 @@ function HomeScreen() {
     }
     fetchData();
   }, [])
-  return <div>
+  return (
+  <div>
+    <Helmet>
+      <title>Amazona</title>
+    </Helmet>
     <h1>Featured Products</h1>
     <div className="products">
       {
@@ -52,6 +56,6 @@ function HomeScreen() {
           )}
     </div>
   </div>
-}
+)}
 
 export default HomeScreen
