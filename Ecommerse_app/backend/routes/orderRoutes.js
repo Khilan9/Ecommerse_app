@@ -25,6 +25,15 @@ orderRouter.post(
 );
 
 orderRouter.get(
+  "/mine",
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const orders = await Order.find({ user: req.user._id });
+    res.send(orders);
+  })
+);
+
+orderRouter.get(
   "/:id",
   isAuth,
   expressAsyncHandler(async (req, res) => {
@@ -59,4 +68,5 @@ orderRouter.put(
     }
   })
 );
+
 export default orderRouter;
